@@ -1,0 +1,14 @@
+show databases;
+use practices;
+show tables;
+
+CREATE TABLE wishing (
+  message VARCHAR(100)
+);
+
+INSERT INTO wishing (message) VALUES ('Good Afternoon');
+
+SELECT 
+  SUBSTRING(message, 6) AS substring,
+  LENGTH(SUBSTRING(message, 6)) AS length
+FROM wishing;
