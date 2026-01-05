@@ -1,0 +1,15 @@
+show databases;
+use practices;
+show tables;
+
+CREATE TABLE future_dates (
+  future_date DATE,
+  future_day VARCHAR(20)
+);
+
+INSERT INTO future_dates (future_date, future_day)
+SELECT 
+  DATE_ADD(CURDATE(), INTERVAL 7 DAY),
+  DAYNAME(DATE_ADD(CURDATE(), INTERVAL 7 DAY));
+
+SELECT * FROM future_dates;
